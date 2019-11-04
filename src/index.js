@@ -29,7 +29,7 @@ function ShakaPlayer({ src, config, autoPlay, width, height }, ref) {
     );
 
     // Store Shaka's API in order to expose it as a handle.
-    controller.current = { player, ui };
+    controller.current = { player, ui, videoElement: videoRef.current };
 
     return () => {
       player.destroy();
@@ -60,6 +60,9 @@ function ShakaPlayer({ src, config, autoPlay, width, height }, ref) {
     },
     get ui() {
       return controller.current.ui;
+    },
+    get videoElement() {
+      return controller.current.videoElement;
     },
   }));
 
