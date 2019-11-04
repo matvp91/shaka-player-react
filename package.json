@@ -1,0 +1,38 @@
+{
+  "name": "shaka-player-react",
+  "version": "1.0.0",
+  "main": "dist/cjs.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "rimraf dist && rollup -c",
+    "start": "rimraf dist && DEV=1 rollup -c --watch",
+    "test": "jest"
+  },
+  "dependencies": {
+    "rollup": "^1.26.2",
+    "shaka-player": "^2.5.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/preset-react": "^7.6.3",
+    "babel-jest": "^24.9.0",
+    "jest": "^24.9.0",
+    "prettier": "^1.18.2",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "react-test-renderer": "^16.11.0",
+    "rimraf": "^3.0.0",
+    "rollup-plugin-alias": "^2.2.0",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-bundle-html": "^0.2.2",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-copy": "^3.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-replace": "^2.2.0",
+    "rollup-plugin-serve": "^1.0.1"
+  },
+  "peerDependencies": {
+    "react": ">= 16.x.x"
+  }
+}
