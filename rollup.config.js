@@ -26,6 +26,7 @@ const lib = {
     file: 'dist/cjs.js',
     format: 'cjs',
   },
+  external: ['react'],
   plugins,
 };
 builds.push(lib);
