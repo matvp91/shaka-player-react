@@ -10,6 +10,8 @@ A React component for [Shaka Player](https://github.com/google/shaka-player), an
 
 ## Usage
 
+Before you start, make sure you load the CSS shipped with shaka-player.
+
 ```javascript
 import React from 'react';
 import ShakaPlayer from 'shaka-player-react';
@@ -64,3 +66,5 @@ function App() {
   );
 }
 ```
+
+Or check the [example](https://github.com/matvp91/shaka-player-react/tree/master/example) in this repository.
