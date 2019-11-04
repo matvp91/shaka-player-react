@@ -34,5 +34,19 @@
   },
   "peerDependencies": {
     "react": ">= 16.x.x"
-  }
+  },
+  "description": "A React component for [Shaka Player](https://github.com/google/shaka-player), an open-source JavaScript library for adaptive media.",
+  "directories": {
+    "example": "example",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matvp91/shaka-player-react.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/matvp91/shaka-player-react/issues"
+  },
+  "homepage": "https://github.com/matvp91/shaka-player-react#readme"
 }
