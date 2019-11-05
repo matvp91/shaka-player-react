@@ -28,9 +28,9 @@ The following `ShakaPlayer` properties are supported:
 | Property | Description | Type |
 |----------|---------------------------------------------------------------------------------------------|--------|
 | src | The MPEG-DASH, or HLS media asset. Is provided to `shaka.Player.load` on mount or change. | String |
-| autoPlay | Whether the asset should autoplay or not, directly bound to the `HTMLVideoElement` element. |  |
-| width | Width of the player. |  |
-| height | Height of the player. |  |
+| autoPlay | Whether the asset should autoplay or not, directly bound to the `HTMLVideoElement` element. | Boolean |
+| width | Width of the player. | Number |
+| height | Height of the player. | Number |
 
 ### Access shaka's player object.
 
