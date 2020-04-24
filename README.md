@@ -68,3 +68,20 @@ function App() {
 ```
 
 Or check the [example](https://github.com/matvp91/shaka-player-react/tree/master/example) in this repository.
+
+## Integrate with
+
+### Next.js
+
+```javascript
+import dynamic from 'next/dynamic';
+
+const ShakaPlayer = dynamic(
+  () => import('shaka-player-react'), 
+  { ssr: false },
+);
+
+// Use <ShakaPlayer ... /> as if it was directly imported from shaka-player-react
+```
+
+When using `next/dynamic` with `{ srr: false }`, we'll make sure the component is not interpreted by Next.js SSR. As of today, pre-rendering shaka-player's UI is technically not possible due to the fact that it is not written in React (but in plain Javascript). Although, shaka-player heavily relies on browser API's and serves no real purpose on a backend anyways.
