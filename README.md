@@ -74,14 +74,24 @@ Or check the [example](https://github.com/matvp91/shaka-player-react/tree/master
 ### Next.js
 
 ```javascript
+import React from 'react';
 import dynamic from 'next/dynamic';
 
 const ShakaPlayer = dynamic(
   () => import('shaka-player-react'), 
-  { ssr: false },
+  { ssr: false }
 );
 
-// Use <ShakaPlayer ... /> as if it was directly imported from shaka-player-react
+export default function Index() {
+  return (
+    <div>
+      <ShakaPlayer
+        autoPlay
+        src="https://storage.googleapis.com/shaka-demo-assets/angel-one/dash.mpd"
+      />
+    </div>
+  );
+}
 ```
 
 When using `next/dynamic` with `{ srr: false }`, we'll make sure the component is not interpreted by Next.js SSR. As of today, pre-rendering shaka-player's UI is technically not possible due to the fact that it is not written in React (but in plain Javascript). Although, shaka-player heavily relies on browser API's and serves no real purpose on a backend anyways.
