@@ -87,7 +87,7 @@ export default function Index() {
     <div>
       <ShakaPlayer
         autoPlay
-        src="https://storage.googleapis.com/shaka-demo-assets/angel-one/dash.mpd"
+        src="https://streams.com/example.mpd"
       />
     </div>
   );
