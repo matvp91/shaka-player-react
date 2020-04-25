@@ -9,7 +9,9 @@ import copy from 'rollup-plugin-copy';
 
 const plugins = [
   replace({
-    'process.env.NODE_ENV': JSON.stringify('production'),
+    'process.env.NODE_ENV': JSON.stringify(
+      process.env.DEV ? 'development' : 'production',
+    ),
   }),
   babel({
     exclude: 'node_modules/**',
@@ -33,9 +35,9 @@ builds.push(lib);
 
 if (process.env.DEV) {
   const devtool = {
-    input: 'example/index.js',
+    input: 'devtools/index.js',
     output: {
-      file: 'dist/example.js',
+      file: 'dist/devtools.js',
       format: 'umd',
     },
     plugins: [
@@ -52,7 +54,7 @@ if (process.env.DEV) {
       html({
         dest: 'dist',
         filename: 'index.html',
-        template: 'example/template.html',
+        template: 'devtools/template.html',
         ignore: /cjs\.js/,
       }),
       alias({

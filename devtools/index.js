@@ -35,7 +35,9 @@ function App() {
       <div>
         <select value={src} onChange={onSelectSrc}>
           {STREAMS.map(stream => (
-            <option value={stream.src}>{stream.name}</option>
+            <option key={stream.src} value={stream.src}>
+              {stream.name}
+            </option>
           ))}
         </select>
       </div>

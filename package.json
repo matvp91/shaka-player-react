@@ -19,8 +19,8 @@
     "babel-jest": "^24.9.0",
     "jest": "^24.9.0",
     "prettier": "^1.18.2",
-    "react": "^16.11.0",
-    "react-dom": "^16.11.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
     "react-test-renderer": "^16.11.0",
     "rimraf": "^3.0.0",
     "rollup-plugin-alias": "^2.2.0",
@@ -37,7 +37,7 @@
   },
   "description": "A React component for [Shaka Player](https://github.com/google/shaka-player), an open-source JavaScript library for adaptive media.",
   "directories": {
-    "example": "example",
+    "devtools": "devtools",
     "test": "test"
   },
   "repository": {
