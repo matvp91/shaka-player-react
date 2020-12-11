@@ -40,7 +40,7 @@ function ShakaPlayer({ src, config, autoPlay, width, height }, ref) {
   // Keep shaka.Player.configure in sync.
   React.useEffect(() => {
     const { player } = controller.current;
-    if (player) {
+    if (player && config) {
       player.configure(config);
     }
   }, [config]);
