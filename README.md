@@ -15,23 +15,26 @@ As seen in the example below, the CSS bundled with `shaka-player` has been impor
 ```javascript
 import React from 'react';
 import ShakaPlayer from 'shaka-player-react';
-import "shaka-player/dist/controls.css";
+import 'shaka-player/dist/controls.css';
 
 function App() {
-  return (
-    <ShakaPlayer autoPlay src="https://streams.com/example.mpd" />
-  );
+  return <ShakaPlayer autoPlay src="https://streams.com/example.mpd" />;
 }
 ```
 
 The following `ShakaPlayer` properties are supported:
 
-| Property | Description | Type |
-|----------|---------------------------------------------------------------------------------------------|--------|
-| src | The MPEG-DASH, or HLS media asset. Is provided to `shaka.Player.load` on mount or change. | String |
-| autoPlay | Whether the asset should autoplay or not, directly bound to the `HTMLVideoElement` element. | Boolean |
-| width | Width of the player. | Number |
-| height | Height of the player. | Number |
+| Property     | Description                                                                                 | Type    |
+| ------------ | ------------------------------------------------------------------------------------------- | ------- |
+| src          | The MPEG-DASH, or HLS media asset. Is provided to `shaka.Player.load` on mount or change.   | String  |
+| autoPlay     | Whether the asset should autoplay or not, directly bound to the `HTMLVideoElement` element. | Boolean |
+| width        | Width of the player.                                                                        | Number  |
+| height       | Height of the player.                                                                       | Number  |
+| playbackRate | Sets the speed of the audio/video playback.                                                 | Number  |
+| muted        | Sets whether the video is muted or not                                                      | Boolean |
+| loop         | Sets whether teh audio/video should start over again when finished                          | Boolean |
+| volume       | Sets the volume of the audio/video                                                          | Number  |
+| className    | Adds a class to the root element, which is a div.                                           | String  |
 
 ### Access shaka's player object.
 
@@ -43,28 +46,26 @@ import ShakaPlayer from 'shaka-player-react';
 
 function App() {
   const controllerRef = useRef(null);
-  
+
   useEffect(() => {
-    const { 
-      /** @type {shaka.Player} */ player, 
+    const {
+      /** @type {shaka.Player} */ player,
       /** @type {shaka.ui.Overlay} */ ui,
-      /** @type {HTMLVideoElement} */ videoElement,
+      /** @type {HTMLVideoElement} */ videoElement
     } = controllerRef.current;
-    
+
     async function loadAsset() {
       // Load an asset.
       await player.load('https://streams.com/example.mpd');
-      
+
       // Trigger play.
       videoElement.play();
     }
-    
+
     loadAsset();
   }, []);
-  
-  return (
-    <ShakaPlayer ref={controllerRef} />
-  );
+
+  return <ShakaPlayer ref={controllerRef} />;
 }
 ```
 
@@ -78,18 +79,12 @@ Or check the [example](https://github.com/matvp91/shaka-player-react/tree/master
 import React from 'react';
 import dynamic from 'next/dynamic';
 
-const ShakaPlayer = dynamic(
-  () => import('shaka-player-react'), 
-  { ssr: false }
-);
+const ShakaPlayer = dynamic(() => import('shaka-player-react'), { ssr: false });
 
 export default function Index() {
   return (
     <div>
-      <ShakaPlayer
-        autoPlay
-        src="https://streams.com/example.mpd"
-      />
+      <ShakaPlayer autoPlay src="https://streams.com/example.mpd" />
     </div>
   );
 }
