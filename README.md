@@ -10,11 +10,12 @@ A React component for [Shaka Player](https://github.com/google/shaka-player), an
 
 ## Usage
 
-Before you start, make sure you load the CSS shipped with shaka-player.
+As seen in the example below, the CSS bundled with `shaka-player` has been imported separately. This is because `shaka-player-react` does not require any CSS internally, which keeps you in full control of the styling as if you were not using this React wrapper.
 
 ```javascript
 import React from 'react';
 import ShakaPlayer from 'shaka-player-react';
+import "shaka-player/dist/controls.css";
 
 function App() {
   return (
