@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "rollup": "^1.26.2",
-    "shaka-player": "^3.0.6"
+    "shaka-player": "^3.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.6.4",
