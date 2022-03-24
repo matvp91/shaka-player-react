@@ -17,7 +17,15 @@ const plugins = [
     exclude: 'node_modules/**'
   }),
   resolve(),
-  commonjs()
+  commonjs(),
+  copy({
+    targets: [
+      {
+        src: 'node_modules/shaka-player/dist/controls.css',
+        dest: 'dist'
+      }
+    ]
+  })
 ];
 
 const builds = [];
@@ -43,14 +51,6 @@ if (process.env.DEV) {
     },
     plugins: [
       ...plugins,
-      copy({
-        targets: [
-          {
-            src: 'node_modules/shaka-player/dist/controls.css',
-            dest: 'dist'
-          }
-        ]
-      }),
       serve({
         open: true,
         contentBase: 'dist'
