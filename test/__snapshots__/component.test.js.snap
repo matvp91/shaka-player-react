@@ -8,6 +8,7 @@ exports[`implementation supports autoPlay, width & height 1`] = `
     style={
       Object {
         "maxWidth": "100%",
+        "width": "100%",
       }
     }
     width={16}

@@ -8,7 +8,7 @@ jest.mock('shaka-player/dist/shaka-player.ui');
 describe('implementation', () => {
   test('supports autoPlay, width & height', () => {
     const component = renderer.create(
-      <ShakaPlayer autoPlay width={16} height={9} />,
+      <ShakaPlayer autoPlay width={16} height={9} />
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -29,6 +29,6 @@ describe('implementation', () => {
 
     const component = renderer.create(<Wrapper />);
 
-    expect(Object.keys(ref.current)).toEqual(['player', 'ui']);
+    expect(Object.keys(ref.current)).toEqual(['player', 'ui', 'videoElement']);
   });
 });
