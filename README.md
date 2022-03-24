@@ -15,7 +15,7 @@ As seen in the example below, the CSS bundled with `shaka-player` has been impor
 ```javascript
 import React from 'react';
 import ShakaPlayer from 'shaka-player-react';
-import 'shaka-player/dist/controls.css';
+import 'shaka-player-react/dist/controls.css';
 
 function App() {
   return <ShakaPlayer autoPlay src="https://streams.com/example.mpd" />;
