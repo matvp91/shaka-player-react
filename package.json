@@ -34,8 +34,8 @@
     "rimraf": "^3.0.0"
   },
   "peerDependencies": {
-    "react": "16 - 17 - 18",
-    "react-dom": "16 - 17 - 18"
+    "react": "16 || 17 || 18",
+    "react-dom": "16 || 17 || 18"
   },
   "description": "A React component for [Shaka Player](https://github.com/google/shaka-player), an open-source JavaScript library for adaptive media.",
   "directories": {
